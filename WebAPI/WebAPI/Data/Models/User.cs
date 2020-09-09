@@ -1,10 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using WebAPI.Utils.Enums;
 
 namespace WebAPI.Data.Models
 {
-    [Table("User")]
+    [Table("users")]
     public class User
     {
         [Key]
@@ -30,7 +31,7 @@ namespace WebAPI.Data.Models
         public String IdCard { get; set; }
 
         [Required]
-        public String IdCardType { get; set; } //CED = CEDULA, PAS= PASAPORTE, RNC = RNC
+        public CardTypeEnum IdCardType { get; set; }
 
         [Required]
         public DateTime Dob { get; set; } //Date of Birth
@@ -39,6 +40,10 @@ namespace WebAPI.Data.Models
 
         [Required]
         public String CellPhone { get; set; }
+
+        public DateTime CreateDate { get; set; }
+
+        public DateTime UpdateDate { get; set; }
 
     }
 }
