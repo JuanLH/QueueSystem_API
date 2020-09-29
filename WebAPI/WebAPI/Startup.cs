@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Users.Data;
+using WebAPI.Data;
 using WebAPI.Data.Models;
 
 namespace WebAPI
@@ -28,6 +30,9 @@ namespace WebAPI
                 o.UseNpgsql(connectionString, op =>
                     op.MigrationsAssembly("WebAPI"));
             });
+
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<SeedDb>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

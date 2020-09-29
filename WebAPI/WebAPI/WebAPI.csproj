@@ -5,7 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Services\" />
+    <Compile Remove="Migrations\20200924013939_InitialDb.cs" />
+    <Compile Remove="Migrations\20200924013939_InitialDb.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Views\" />
   </ItemGroup>
 

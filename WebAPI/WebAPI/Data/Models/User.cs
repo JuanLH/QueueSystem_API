@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using WebAPI.Utils.Enums;
 
-namespace WebAPI.Data.Models
+namespace Users.Data
 {
     [Table("users")]
     public class User

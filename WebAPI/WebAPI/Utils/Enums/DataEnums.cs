@@ -18,4 +18,9 @@ namespace WebAPI.Utils.Enums
         Simple = 2,
         Additional = 3 
     }
+    public enum AppointmentTypeEnum
+    {
+        domicile = 1,
+        normal = 2,
+    }
 }
