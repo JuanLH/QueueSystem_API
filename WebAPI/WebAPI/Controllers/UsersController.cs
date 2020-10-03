@@ -6,15 +6,22 @@ using System.Threading.Tasks;
 using Users.Data;
 using WebAPI.Data.Models;
 
-namespace Trips.Controller
+namespace Users.Controller
 {
-    [Route("api/[controller]")]
+    [Route("api/Users")]
+    [ApiController]
     public class UsersController: ControllerBase
     {
-        private readonly DataContext _dataContext;
         private IUserService _service;
+
         public UsersController(IUserService service) {
             this._service = service;
+        }
+
+        [HttpGet("hello")]
+        public string sayHello()
+        {
+            return "Hello world";
         }
 
         [HttpPost("AddUser")]
@@ -24,6 +31,12 @@ namespace Trips.Controller
                 _service.AddUser(user);
             }
             return Ok();
+        }
+
+        [HttpGet("GetAll")]
+        public IActionResult GetAll()
+        {
+            return Ok(_service.GetAllUsers());
         }
     }
 }

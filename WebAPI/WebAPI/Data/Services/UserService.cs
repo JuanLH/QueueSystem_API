@@ -1,35 +1,62 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.Data.Models;
 
 namespace Users.Data
 {
     public class UserService : IUserService
     {
+
+        private readonly DataContext _context;
+
+        public UserService(DataContext context)
+        {
+            _context = context;
+        }
+
         public void AddUser(User user)
         {
-            throw new NotImplementedException();
+            _context.Users.Add(user);
+            _context.SaveChangesAsync();
         }
 
         public void DeleteUser(int id)
         {
-            throw new NotImplementedException();
+            var user = _context.Users.Where(u => u.Id == id).FirstOrDefault<User>();
+            _context.Users.Remove(user);
+            _context.SaveChangesAsync();
         }
 
         public List<User> GetAllUsers()
         {
-            throw new NotImplementedException();
+            return _context.Users.ToList<User>();
         }
 
         public User GetUserById(int id)
         {
-            throw new NotImplementedException();
+            var user = _context.Users.Where(u => u.Id == id).FirstOrDefault<User>();
+
+            if (user != null)
+            {
+                return user;
+            }
+            else {
+                return null;
+            }
+            
         }
 
         public void UpdateUser(int id, User user)
         {
-            throw new NotImplementedException();
+            if (id != user.Id)
+                return;
+
+            
         }
     }
 }
