@@ -19,17 +19,35 @@ namespace Users.Data
             _context = context;
         }
 
-        public void AddUser(User user)
+        public User AddUser(User user)
         {
-            _context.Users.Add(user);
-            _context.SaveChangesAsync();
+
+            User us = new User();
+            us.UserName = user.UserName;
+            us.Password = user.Password;
+            us.FirstName = user.FirstName;
+            us.LastName = user.LastName;
+            us.NickName = user.NickName;
+            us.IdCard = user.IdCard;
+            us.IdCardType = user.IdCardType;
+            us.Dob = user.Dob;
+            us.Telephone = user.Telephone;
+            us.CellPhone = user.CellPhone;
+            //us.CreateDate = user.CreateDate;
+            us.UpdateDate = user.UpdateDate;
+        
+            _context.Users.Add(us);
+            _context.SaveChanges();
+            return us;
         }
 
-        public void DeleteUser(int id)
+        public User DeleteUser(int id)
         {
             var user = _context.Users.Where(u => u.Id == id).FirstOrDefault<User>();
             _context.Users.Remove(user);
             _context.SaveChangesAsync();
+            return user;
+
         }
 
         public List<User> GetAllUsers()
@@ -39,7 +57,7 @@ namespace Users.Data
 
         public User GetUserById(int id)
         {
-            var user = _context.Users.Where(u => u.Id == id).FirstOrDefault<User>();
+            var user = _context.Users.Where(u => u.Id == id).Single<User>();
 
             if (user != null)
             {
@@ -51,12 +69,25 @@ namespace Users.Data
             
         }
 
-        public void UpdateUser(int id, User user)
+        public User UpdateUser(User user)
         {
-            if (id != user.Id)
-                return;
-
-            
+            User us = _context.Users.Where(u => u.Id == user.Id).Single<User>();
+            us.UserName = user.UserName;
+            us.Password = user.Password;
+            us.FirstName = user.FirstName;
+            us.LastName = user.LastName;
+            us.NickName = user.NickName;
+            us.IdCard = user.IdCard;
+            us.IdCardType = user.IdCardType;
+            us.Dob = user.Dob;
+            us.Telephone = user.Telephone;
+            us.CellPhone = user.CellPhone;
+            //us.CreateDate = user.CreateDate;
+            us.UpdateDate = user.UpdateDate;
+            _context.Entry(us).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _context.SaveChanges();
+            return us;
         }
+
     }
 }

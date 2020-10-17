@@ -18,17 +18,11 @@ namespace Users.Controller
             this._service = service;
         }
 
-        [HttpGet("hello")]
-        public string sayHello()
-        {
-            return "Hello world";
-        }
-
         [HttpPost("AddUser")]
         public IActionResult AddUser([FromBody] User user)
         {
             if (user != null) {
-                _service.AddUser(user);
+                return Ok(_service.AddUser(user));
             }
             return Ok();
         }
@@ -38,5 +32,27 @@ namespace Users.Controller
         {
             return Ok(_service.GetAllUsers());
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById([FromRoute] int id)
+        {
+            return Ok(_service.GetUserById(id));
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteById([FromRoute] int id)
+        {
+            return Ok(_service.DeleteUser(id));
+        }
+
+        [HttpPut("UpdateUser")]
+        public IActionResult UpdateUser([FromBody] User user)
+        {
+            if (user != null)
+                return Ok(_service.UpdateUser(user));
+            else
+                return Ok();
+        }
+
     }
 }

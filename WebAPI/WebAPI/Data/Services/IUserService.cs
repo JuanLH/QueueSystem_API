@@ -9,9 +9,9 @@ namespace Users.Data
     {
         List<User> GetAllUsers();
         User GetUserById(int id);
-        void UpdateUser(int id, User user);
-        void DeleteUser(int id);
-        void AddUser(User user);
+        User UpdateUser(User user);
+        User DeleteUser(int id);
+        User AddUser(User user);
 
     }
 }
