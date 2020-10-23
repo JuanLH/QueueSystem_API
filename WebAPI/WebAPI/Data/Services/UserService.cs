@@ -1,10 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using WebAPI.Data.Models;
 
 namespace Users.Data
@@ -22,23 +17,9 @@ namespace Users.Data
         public User AddUser(User user)
         {
 
-            User us = new User();
-            us.UserName = user.UserName;
-            us.Password = user.Password;
-            us.FirstName = user.FirstName;
-            us.LastName = user.LastName;
-            us.NickName = user.NickName;
-            us.IdCard = user.IdCard;
-            us.IdCardType = user.IdCardType;
-            us.Dob = user.Dob;
-            us.Telephone = user.Telephone;
-            us.CellPhone = user.CellPhone;
-            //us.CreateDate = user.CreateDate;
-            us.UpdateDate = user.UpdateDate;
-        
-            _context.Users.Add(us);
+            _context.Users.Add(user);
             _context.SaveChanges();
-            return us;
+            return user;
         }
 
         public User DeleteUser(int id)
@@ -63,27 +44,16 @@ namespace Users.Data
             {
                 return user;
             }
-            else {
+            else
+            {
                 return null;
             }
-            
+
         }
 
         public User UpdateUser(User user)
         {
             User us = _context.Users.Where(u => u.Id == user.Id).Single<User>();
-            us.UserName = user.UserName;
-            us.Password = user.Password;
-            us.FirstName = user.FirstName;
-            us.LastName = user.LastName;
-            us.NickName = user.NickName;
-            us.IdCard = user.IdCard;
-            us.IdCardType = user.IdCardType;
-            us.Dob = user.Dob;
-            us.Telephone = user.Telephone;
-            us.CellPhone = user.CellPhone;
-            //us.CreateDate = user.CreateDate;
-            us.UpdateDate = user.UpdateDate;
             _context.Entry(us).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _context.SaveChanges();
             return us;

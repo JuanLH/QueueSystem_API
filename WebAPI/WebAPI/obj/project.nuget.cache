@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TnhOGzIH3R7f8arBxfq1BdEq9QcbTC6KDy00IvBJf5DRoFk+wgpG5QKqqEaJEP5+kQSagDrNszn2Qt2J1AEr0w==",
+  "dgSpecHash": "IjINCnY69iobzpqdQvvQmfY/SE0nBd5F/YpUjSHboFMzrDLtNEpJ+db6Yr35puIu6taSGuvDh6BTxzxl/HkNXQ==",
   "success": true,
-  "projectFilePath": "C:\\Wkdirectory\\ReserSys\\api-core\\WebAPI\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "C:\\Wkdirectory\\ReserSys\\QueueSystem_API\\WebAPI\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\juanl\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\juanl\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

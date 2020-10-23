@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebAPI.Utils.Enums;
 
-namespace WebAPI.Data.Models
+namespace Services.Data
 {
     [Table("services")]
     public class Service
@@ -29,7 +29,7 @@ namespace WebAPI.Data.Models
 
         public ServiceTypeEnum ServiceType { get; set; }
 
-        public ServiceGroup Group { get; set; }
+        public ServiceGroup ServiceGroup { get; set; }
 
         public DateTime CreateDate { get; set; }
 

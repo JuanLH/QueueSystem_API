@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Wkdirectory\\ReserSys\\api-core\\WebAPI\\WebAPI\\WebAPI.csproj": {}
+    "C:\\Wkdirectory\\ReserSys\\QueueSystem_API\\WebAPI\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Wkdirectory\\ReserSys\\api-core\\WebAPI\\WebAPI\\WebAPI.csproj": {
+    "C:\\Wkdirectory\\ReserSys\\QueueSystem_API\\WebAPI\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Wkdirectory\\ReserSys\\api-core\\WebAPI\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\Wkdirectory\\ReserSys\\QueueSystem_API\\WebAPI\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Wkdirectory\\ReserSys\\api-core\\WebAPI\\WebAPI\\WebAPI.csproj",
+        "projectPath": "C:\\Wkdirectory\\ReserSys\\QueueSystem_API\\WebAPI\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\juanl\\.nuget\\packages\\",
-        "outputPath": "C:\\Wkdirectory\\ReserSys\\api-core\\WebAPI\\WebAPI\\obj\\",
+        "outputPath": "C:\\Wkdirectory\\ReserSys\\QueueSystem_API\\WebAPI\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
