@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Services.Data;
 using Users.Data;
 
 namespace WebAPI.Data.Models

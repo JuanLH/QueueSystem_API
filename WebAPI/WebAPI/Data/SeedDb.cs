@@ -32,7 +32,7 @@ namespace WebAPI.Data
                     FirstName="Juan",
                     LastName="Hiciano",
                     IdCard="402-2439183-5",
-                    IdCardType = Utils.Enums.CardTypeEnum.Cedula,
+                    IdCardType = Utils.Enums.CardTypeEnum.LocalId,
                     Dob=DateTime.Now,
                     CellPhone = "829-787-8578"
                 });
@@ -44,7 +44,7 @@ namespace WebAPI.Data
                     FirstName = "Emily",
                     LastName = "Sanchez",
                     IdCard = "402-2539183-1",
-                    IdCardType = Utils.Enums.CardTypeEnum.Cedula,
+                    IdCardType = Utils.Enums.CardTypeEnum.LocalId,
                     Dob = DateTime.Now,
                     CellPhone = "809-874-2509"
                 });

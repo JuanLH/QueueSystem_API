@@ -1,9 +1,8 @@
-﻿using System;
+﻿using Services.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 using Users.Data;
 using WebAPI.Utils.Enums;
 
@@ -26,7 +25,7 @@ namespace WebAPI.Data.Models
         public DateTime FinishTime { get; set; }//Must be Calculate with the services
 
         [Required]
-        public ICollection<Service> Services { get; set; }
+        public ICollection<AppointmentsDetail> Detail { get; set; }
 
         public AppointmentTypeEnum AppointmentType { get; set; }
 

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Services.Data;
 
-namespace WebAPI.Controllers
+namespace Services.Controllers
 {
     [Route("api/Services")]
     [ApiController]
@@ -27,7 +27,7 @@ namespace WebAPI.Controllers
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
-            return Ok(_service.GetAllService());
+            return Ok(_service.GetAllServices());
         }
 
         [HttpGet("{id}")]

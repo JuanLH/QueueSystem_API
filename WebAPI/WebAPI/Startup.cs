@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Services.Data;
 using Users.Data;
 using WebAPI.Data;
 using WebAPI.Data.Models;
@@ -32,6 +33,8 @@ namespace WebAPI
             });
 
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IServiceService, ServiceService>();
+
             services.AddTransient<SeedDb>();
         }
 

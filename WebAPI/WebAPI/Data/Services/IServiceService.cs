@@ -5,7 +5,7 @@ namespace Services.Data
 {
     public interface IServiceService
     {
-        List<Service> GetAllService();
+        List<Service> GetAllServices();
         Service GetServiceById(int id);
         Service UpdateService(Service user);
         Service DeleteService(int id);

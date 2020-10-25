@@ -4,16 +4,21 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.Data.Models;
 using WebAPI.Utils.Enums;
 
 namespace Services.Data
 {
     [Table("services")]
-    public class Service
+    public class Service 
     {
+       
         [Key]
         public int Id { get; set; }
 
+        
+        [Index(IsUnique = true)]
+        [MaxLength(4)]
         [Required]
         public String Identifier { get; set; }
 
@@ -31,11 +36,9 @@ namespace Services.Data
 
         public ServiceGroup ServiceGroup { get; set; }
 
-        public DateTime CreateDate { get; set; }
+        public DateTime CreatedDate { get; set; }
 
-        public DateTime UpdateDate { get; set; }
-
-        
+        public DateTime UpdatedDate { get; set; }
 
 
     }

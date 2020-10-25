@@ -7,9 +7,9 @@ namespace WebAPI.Utils.Enums
 {
     public enum CardTypeEnum
     {
-        Cedula = 1,
-        Pasaporte = 2,
-        Rnc = 3
+        LocalId = 1,
+        Passport = 2,
+        BusinessId = 3
     }
 
     public enum ServiceTypeEnum

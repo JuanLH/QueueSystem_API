@@ -28,7 +28,7 @@ namespace Services.Data
             return service;
         }
 
-        public List<Service> GetAllService()
+        public List<Service> GetAllServices()
         {
             return _context.Services.ToList<Service>();
         }
