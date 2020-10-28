@@ -24,10 +24,17 @@ namespace Users.Data
 
         public User DeleteUser(int id)
         {
-            var user = _context.Users.Where(u => u.Id == id).FirstOrDefault<User>();
-            _context.Users.Remove(user);
-            _context.SaveChangesAsync();
-            return user;
+            var user = _context.Users.Where(u => u.Id == id).FirstOrDefault();
+            if (user != null)
+            {
+                _context.Users.Remove(user);
+                _context.SaveChangesAsync();
+                return user;
+            }
+            else
+            {
+                return null;
+            }
 
         }
 
@@ -38,7 +45,7 @@ namespace Users.Data
 
         public User GetUserById(int id)
         {
-            var user = _context.Users.Where(u => u.Id == id).Single<User>();
+            var user = _context.Users.Where(u => u.Id == id).FirstOrDefault();
 
             if (user != null)
             {
@@ -53,10 +60,18 @@ namespace Users.Data
 
         public User UpdateUser(User user)
         {
-            User us = _context.Users.Where(u => u.Id == user.Id).Single<User>();
-            _context.Entry(us).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            _context.SaveChanges();
-            return us;
+            User us = _context.Users.Where(u => u.Id == user.Id).FirstOrDefault();
+            if (user != null)
+            {
+                us.CopyUser(user);
+                _context.Entry(us).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                _context.SaveChanges();
+                return us;
+            }
+            else
+            {
+                return null;
+            }
         }
 
     }

@@ -52,3 +52,5 @@ Thumbs.db
 WebAPI/WebAPI/Migrations
 WebAPI/WebAPI/obj/Debug/netcoreapp3.1
 WebAPI/WebAPI/bin/Debug/netcoreapp3.1
+*.user
+WebAPI/WebAPI/obj

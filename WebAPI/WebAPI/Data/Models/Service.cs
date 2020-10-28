@@ -12,7 +12,22 @@ namespace Services.Data
     [Table("services")]
     public class Service 
     {
-       
+
+        public void copyService(Service service) {
+            //Id Not Set
+            this.Identifier = service.Identifier;
+            this.Name = service.Name;
+            this.DurationTime = service.DurationTime;
+            this.AvgDurationTime = service.AvgDurationTime;
+            this.Price = service.Price;
+            this.ServiceType = service.ServiceType;
+            this.ServiceGroup = service.ServiceGroup;
+            //CreatedDate Not Set
+            this.UpdatedDate = service.UpdatedDate;
+
+
+        }
+
         [Key]
         public int Id { get; set; }
 

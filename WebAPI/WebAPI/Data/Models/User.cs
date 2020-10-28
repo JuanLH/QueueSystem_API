@@ -8,6 +8,24 @@ namespace Users.Data
     [Table("users")]
     public class User
     {
+        public void CopyUser(User user)
+        {
+            //For update porpuse
+            //Id Not Set
+            this.UserName = user.UserName;
+            this.Password = user.Password;
+            this.FirstName = user.FirstName;
+            this.LastName = user.LastName;
+            this.NickName = user.NickName;
+            this.IdCard = user.IdCard;
+            this.IdCardType = user.IdCardType;
+            this.Dob = user.Dob;
+            this.Telephone = user.Telephone;
+            this.CellPhone = user.CellPhone;
+            //CreateDate Not Set
+            this.UpdateDate = user.UpdateDate;
+        }
+
         [Key]
         public int Id { get; set; }
 

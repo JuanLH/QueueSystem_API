@@ -22,10 +22,18 @@ namespace Services.Data
 
         public Service DeleteService(int id)
         {
-            var service = _context.Services.Where(u => u.Id == id).FirstOrDefault<Service>();
-            _context.Services.Remove(service);
-            _context.SaveChanges();
-            return service;
+            var service = _context.Services.Where(u => u.Id == id).FirstOrDefault();
+            if (service != null)
+            {
+                _context.Services.Remove(service);
+                _context.SaveChanges();
+                return service;
+            }
+            else
+            {
+                return null;
+            }
+            
         }
 
         public List<Service> GetAllServices()
@@ -35,7 +43,7 @@ namespace Services.Data
 
         public Service GetServiceById(int id)
         {
-            var service = _context.Services.Where(s => s.Id == id).Single<Service>();
+            var service = _context.Services.Where(s => s.Id == id).FirstOrDefault();
 
             if (service != null)
             {
@@ -49,10 +57,19 @@ namespace Services.Data
 
         public Service UpdateService(Service service)
         {
-            Service ser = _context.Services.Where(s => s.Id == service.Id).Single<Service>();
-            _context.Entry(ser).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            _context.SaveChanges();
-            return ser;
+            Service ser = _context.Services.Where(s => s.Id == service.Id).FirstOrDefault();
+            if (ser != null)
+            {
+                ser.copyService(service);
+                _context.Entry(ser).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                _context.SaveChanges();
+                return ser;
+            }
+            else
+            {
+                return null;
+            }
+            
         }
     }
 }
